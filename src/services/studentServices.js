@@ -14,4 +14,8 @@ export const getSingleStudent = (id) => {
   return jsonServerApi.get("/ucenici/" + id);
 };
 
+export const addSingleStudent = (data) => {
+  return jsonServerApi.post("/ucenici", data);
+};
+
 export default jsonServerApi;

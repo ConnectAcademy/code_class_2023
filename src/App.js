@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddCourse from "./pages/AddCourse";
 import AddStudent from "./pages/AddStudent";
 import Student from "./pages/Student";
 import Students from "./pages/Students";
@@ -7,6 +8,7 @@ import Students from "./pages/Students";
 const routes = createBrowserRouter([
   { path: "/", element: <Students /> },
   { path: "/add-student", element: <AddStudent /> },
+  { path: "/add-course", element: <AddCourse /> },
   { path: "/students/:id", element: <Student /> },
 ]);
 

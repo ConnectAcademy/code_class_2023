@@ -13,7 +13,6 @@ const Home = () => {
       .then((res) => setStudents(res))
       .catch((err) => console.log(err));
   }, []);
-  console.log(students);
   return (
     <div>
       <Header />

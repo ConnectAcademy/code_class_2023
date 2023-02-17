@@ -3,14 +3,14 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 
 import { getSingleStudent } from "../services/studentServices";
-import { getStudentComments } from "../services/commentServices";
-import { Container, Heading } from "@chakra-ui/layout";
-import { CardBody, Text, Card } from "@chakra-ui/react";
+import { getListeningCourses } from "../services/courseServices";
+import { Container } from "@chakra-ui/layout";
+import { Text, Kbd } from "@chakra-ui/react";
 
 const Student = () => {
   const { id } = useParams();
   const [student, setStudent] = useState();
-  const [comments, setComments] = useState([]);
+  const [listeningCourses, setListeningCourses] = useState([]);
 
   useEffect(() => {
     getSingleStudent(id)
@@ -19,12 +19,12 @@ const Student = () => {
   }, [id]);
 
   useEffect(() => {
-    getStudentComments(id)
-      .then((res) => setComments(res))
-      .catch((err) => console.log(err));
-  }, [id]);
-
-  console.log(comments);
+    if (student) {
+      getListeningCourses(student.courses).then((res) =>
+        setListeningCourses(res)
+      );
+    }
+  }, [student]);
   return (
     <div>
       <Header />
@@ -36,15 +36,10 @@ const Student = () => {
             <Text>{student.from}</Text>
           </>
         )}
-        {comments.length === 0 && (
-          <Heading>No comments found for this student!</Heading>
-        )}
-        {comments.map((comment) => (
-          <Card key={comment.id}>
-            <CardBody>
-              <Text>{comment.body}</Text>
-            </CardBody>
-          </Card>
+        {listeningCourses.map((course) => (
+          <Kbd key={course.id} mr={2}>
+            {course.name}
+          </Kbd>
         ))}
       </Container>
     </div>
