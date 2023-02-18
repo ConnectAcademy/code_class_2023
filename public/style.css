@@ -1,0 +1,44 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.appContainer {
+    min-height: 100vh;
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.formContainer {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+input {
+    padding-left: 10px;
+    width: 100%;
+    border-style: none;
+    border: 1px solid rgb(65, 58, 58);
+    border-radius: 10px;
+    height: 35px;
+    columns: rgb(65, 58, 58);
+    background-color: rgb(238, 235, 232);
+}
+
+button {
+    width: 100%;
+    border-style: none;
+    border: 1px solid rgb(65, 58, 58);
+    border-radius: 10px;
+    height: 35px;
+    columns: rgb(65, 58, 58);
+    background-color: rgb(238, 235, 232);
+}
