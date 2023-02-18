@@ -7,6 +7,7 @@ body {
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
+    flex-direction: column;
 }
 
 .formContainer {
@@ -41,4 +42,14 @@ button {
     height: 35px;
     columns: rgb(65, 58, 58);
     background-color: rgb(238, 235, 232);
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+.link {
+    margin-right: 5px;
+    color: black;
 }
