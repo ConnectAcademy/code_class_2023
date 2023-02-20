@@ -1,18 +1,14 @@
-import React, { useContext } from "react";
-import DrugaKomponenta from "./DrugaKomponenta";
-import { MyContext } from "./store/context";
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 function App() {
-  const { nekojaSiGlobalFn } = useContext(MyContext);
-  return (
-    <div>
-      <DrugaKomponenta />
-      <h1>Hello World!</h1>
-      <button onClick={() => nekojaSiGlobalFn("stavi go ova za global state")}>
-        Smeni global state
-      </button>
-    </div>
-  );
+  const router = createBrowserRouter([
+    { path: "/", element: <Home /> },
+    { path: "/login", element: <Login /> },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;

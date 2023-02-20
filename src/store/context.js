@@ -3,18 +3,20 @@ import React, { createContext, useState } from "react";
 export const MyContext = createContext({});
 
 const MyContextProvider = ({ children }) => {
-  const [myState, setMyState] = useState("");
+  const [currentUser, setCurrentUser] = useState(null);
 
-  const changeMyGlobalState = (input) => {
-    setMyState(input);
+  const logIn = (user) => {
+    setCurrentUser(user);
   };
 
-  let globalState = {
-    nekojState: myState,
-    nekojaSiGlobalFn: changeMyGlobalState,
-  };
+  const logOut = () => setCurrentUser(null);
+
   return (
-    <MyContext.Provider value={globalState}>{children}</MyContext.Provider>
+    <MyContext.Provider
+      value={{ user: currentUser, handleLogin: logIn, handleLogout: logOut }}
+    >
+      {children}
+    </MyContext.Provider>
   );
 };
 
