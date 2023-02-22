@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "email": "jhon@doe.com",
+      "password": "$2a$10$F2zyTHVvv.OAEuSNJoEfjOViLOUUJrFpTEgXWFaG7AzcGCwKqh1S.",
+      "firstname": "Jhon",
+      "lastname": "Doe",
+      "id": 1
+    },
+    {
+      "email": "jhon@doe2.com",
+      "password": "$2a$10$CVYUqW9z4j2gQG6KSB/J7e0y/fypUB8IzB7eLaPD7ziq43Ltpa61a",
+      "firstname": "Jhon2",
+      "lastname": "Doe2",
+      "id": 2
+    }
+  ],
+  "posts": []
+}
