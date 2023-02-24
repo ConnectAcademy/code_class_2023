@@ -22,7 +22,7 @@ const Login = () => {
       password: passRef.current.value,
     };
     api.post("/login", data).then((res) => {
-      logIn(res.data);
+      logIn(res);
       nav("/");
     });
   };
